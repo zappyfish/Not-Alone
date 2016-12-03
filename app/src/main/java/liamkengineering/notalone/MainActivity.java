@@ -20,16 +20,14 @@ public class MainActivity extends AppCompatActivity {
     Settings settings = new Settings();
     Button settingsButton;
     Button textMessageButton;
-<<<<<<< HEAD
     Button hotlineButton;
     String hotline = "8002738255";
-=======
+
     Button personalButton;
     TextView mTest;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference mDatabase;
     String test;
->>>>>>> 1d796f88807c5babea24c517b379a7ab14b91340
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
         hotlineButton = (Button) findViewById(R.id.hotline);
         hotlineButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -65,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-=======
+
         personalButton = (Button) findViewById(R.id.personal);
         personalButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -92,6 +89,5 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateMessage() {
         mTest.setText(test);
->>>>>>> 1d796f88807c5babea24c517b379a7ab14b91340
     }
 }

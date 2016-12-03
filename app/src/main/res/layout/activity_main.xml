@@ -27,7 +27,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/textMessage"
         android:text="Send Text" />
-<<<<<<< HEAD
 
     <Button
         android:layout_width="fill_parent"
