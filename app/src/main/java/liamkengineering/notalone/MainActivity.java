@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     Button settingsButton;
+    Button textMessageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View arg0) {
                 Intent i = new Intent(MainActivity.this, Settings.class);
                 startActivity(i);
+
+            }
+        });
+
+        textMessageButton = (Button) findViewById(R.id.textMessage);
+        textMessageButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent i = new Intent(MainActivity.this, TextMessage.class);
+                startActivity(i);
+
             }
         });
     }
