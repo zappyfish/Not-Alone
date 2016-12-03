@@ -60,7 +60,7 @@ public class TextMessage extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.checkbox_c1:
                 if (checked) {
-                    sendTo.add(9739539755L);
+                    sendTo.add(8602151217L);
                 }
 
         }

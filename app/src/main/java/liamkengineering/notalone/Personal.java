@@ -12,17 +12,23 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 public class Personal extends AppCompatActivity {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference mDatabase;
     EditText sendMessage;
     Button sendButton;
+    List<String> niceThings; // need to get current vals in nice things, then append and add to nice things
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal);
+        niceThings = getNiceThings();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         sendMessage = (EditText) findViewById(R.id.send);
@@ -30,9 +36,12 @@ public class Personal extends AppCompatActivity {
         sendButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                mDatabase = database.getReference("message");
-                if(sendMessage.getText()!=null)
-                mDatabase.setValue(sendMessage.getText().toString());
+                Settings set = new Settings();
+                mDatabase = database.getReference(set.getUsername()); // get username
+                if(sendMessage.getText()!=null) {
+                    niceThings.add(sendMessage.getText().toString()); // add to list
+                    mDatabase.setValue(niceThings); // save list
+                }
             }
         });
 
@@ -45,5 +54,12 @@ public class Personal extends AppCompatActivity {
             }
         });
     }
-
+    public List<String> getNiceThings() {
+        Settings set = new Settings();
+        String key = set.getUsername();
+        Set<String> s = set.sharedPrefs.getStringSet(key, null);
+        List<String> l = new ArrayList<String>();
+        l.addAll(s);
+        return l;
+    }
 }
