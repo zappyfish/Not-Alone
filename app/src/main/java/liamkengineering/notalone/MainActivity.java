@@ -4,7 +4,10 @@ NOTE: DON'T FORGET TO ENABLE STORAGE PERMISSINOS OR THE APP WILL FAIL
  */
 import android.content.Intent;
 import android.net.Uri;
+<<<<<<< HEAD
 import android.os.Handler;
+=======
+>>>>>>> 29b7e2eec4ee1dc7ea4c64dc8ab54e074774c1e8
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,11 +28,16 @@ public class MainActivity extends AppCompatActivity {
     List<String> niceThings;
     Button settingsButton;
     Button textMessageButton;
+<<<<<<< HEAD
+    Button hotlineButton;
+    String hotline = "8002738255";
+=======
     Button personalButton;
     TextView mTest;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference mDatabase;
     String test;
+<<<<<<< HEAD
     int curMessage = 0;
     // for updating UI
     private final Handler handler = new Handler();
@@ -40,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
             handler.postDelayed(tickUi, 5000);
         }
     };
+=======
+>>>>>>> 1d796f88807c5babea24c517b379a7ab14b91340
+>>>>>>> 29b7e2eec4ee1dc7ea4c64dc8ab54e074774c1e8
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +78,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
+        hotlineButton = (Button) findViewById(R.id.hotline);
+        hotlineButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + hotline));
+                startActivity(i);
+            }
+        });
+=======
         personalButton = (Button) findViewById(R.id.personal);
         personalButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -87,7 +108,16 @@ public class MainActivity extends AppCompatActivity {
                 mTest.setText("error");
             }
         });
+<<<<<<< HEAD
         handler.post(tickUi);
+=======
+
+    }
+
+    public void updateMessage() {
+        mTest.setText(test);
+>>>>>>> 1d796f88807c5babea24c517b379a7ab14b91340
+>>>>>>> 29b7e2eec4ee1dc7ea4c64dc8ab54e074774c1e8
     }
         public void updateMessages() {
             if(niceThings != null) {
