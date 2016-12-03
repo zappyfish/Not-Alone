@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">Not Alone</string>
     <string name="title_activity_settings">Settings</string>
-    <string name="title_activity_personal">Personal</string>
+<<<<<<< HEAD
 =======
+
+>>>>>>> 040980303c543d5ff11a94596ceb4f36e78d14dd
+    <string name="title_activity_personal">Personal</string>
+
     <string name="send_text_hi_i_m_feeling_a_little_down_do_you_have_time_to_talk">Send text: Hi, I\'m feeling a little down. Do you have time to talk?</string>
     <string name="message_hi_i_m_feeling_a_little_down_do_you_have_time_to_talk">Message: Hi, I\'m feeling a little down. Do you have time to talk?</string>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 040980303c543d5ff11a94596ceb4f36e78d14dd
 </resources>

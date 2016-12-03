@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,10 +32,11 @@ import java.util.Set;
 public class Settings extends AppCompatActivity {
     List<Uri> photoList;
     int photoNum = 0;
+    String username;
+    EditText userText;
     TextView textTargetUri;
     ImageView targetImage;
     public static final String PREFS_NAME = "NKDROID_APP";
-    public static final String PHOTOS = "Photo";
     SharedPreferences sharedPrefs;
     Context ctx;
 
@@ -48,9 +50,19 @@ public class Settings extends AppCompatActivity {
         Button buttonLoadImage = (Button) findViewById(R.id.loadimage);
         Button nextButton = (Button) findViewById(R.id.next);
         Button saveButton = (Button) findViewById(R.id.save);
+        Button saveUser = (Button) findViewById(R.id.saveusr);
         textTargetUri = (TextView) findViewById(R.id.targeturi);
         targetImage = (ImageView) findViewById(R.id.targetimage);
+        userText = (EditText) findViewById(R.id.usr);
         ctx = this.getApplicationContext();
+        saveUser.setOnClickListener(new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // TODO Auto-generated method stub
+                setUsername();
+            }
+        });
         buttonLoadImage.setOnClickListener(new Button.OnClickListener() {
 
             @Override
@@ -149,6 +161,17 @@ public class Settings extends AppCompatActivity {
         else {
             return null;
         }
+    }
+    /*
+    This gets texts in userText to save a username in sharedpreferences
+     */
+    public void setUsername() {
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        editor.putString("USERNAME", userText.getText().toString());
+        editor.apply();
+    }
+    public String getUsername() {
+        return sharedPrefs.getString("USERNAME", null);
     }
 
 }
