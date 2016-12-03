@@ -50,7 +50,7 @@ public class Settings extends AppCompatActivity {
         Button saveButton = (Button) findViewById(R.id.save);
         textTargetUri = (TextView) findViewById(R.id.targeturi);
         targetImage = (ImageView) findViewById(R.id.targetimage);
-        ctx = this;
+        ctx = this.getApplicationContext();
         buttonLoadImage.setOnClickListener(new Button.OnClickListener() {
 
             @Override
@@ -89,12 +89,14 @@ public class Settings extends AppCompatActivity {
                 }
             }
         });
-        photoList = readFromInternalStorage(ctx);
+        photoList = readFromInternalStorage(ctx); // get photos upon creation
         if(photoList == null) {
             photoList = new ArrayList<>();
         }
     }
-
+    /*
+        this method gets the media uri and displays the photo as a bitmap
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
@@ -114,17 +116,24 @@ public class Settings extends AppCompatActivity {
             }
         }
     }
+    /*
+       this method is called by the save button, and it saves photo uris in sharedpreferences
+     */
     public void savePhotos(Context ctx) {
         SharedPreferences.Editor editor = sharedPrefs.edit();
         Set<String> s = new HashSet<String>();
         for(int i =0; i<photoList.size();i++) {
             s.add(photoList.get(i).toString());
         }
-        editor.putStringSet("PHOTOS", s);
-        editor.apply();
+        if(!s.isEmpty()) {
+            editor.putStringSet("PHOTOS", s);
+            editor.apply();
+        }
 
     }
-
+    /*
+    this method uses sharepreferences to read from internal storage.
+     */
     public List<Uri> readFromInternalStorage(Context ctx) {
         List<Uri> l = new ArrayList<>();
         List<String> temp = new ArrayList<>();
