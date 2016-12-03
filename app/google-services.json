@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "829606076045",
+    "firebase_url": "https://not-alone-8602e.firebaseio.com",
+    "project_id": "not-alone-8602e",
+    "storage_bucket": "not-alone-8602e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829606076045:android:98e5f7cc20100350",
+        "android_client_info": {
+          "package_name": "liamkengineering.notalone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829606076045-idb3uv16qko2s5j21d8hcbrt1nsoevd3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi7P5skfvprZ8zReIURtkpwtCIDMzN6fY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
