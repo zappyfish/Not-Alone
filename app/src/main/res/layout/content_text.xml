@@ -16,7 +16,20 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="contacts will go here"
+        android:text="@string/message_hi_i_m_feeling_a_little_down_do_you_have_time_to_talk"
         android:onClick=""/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Available contacts:"
+        android:onClick=""/>
+
+    <CheckBox
+        android:id="@+id/checkbox_c1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9739539755"
+        android:onClick="onCheckboxClicked" />
 
 </LinearLayout>
