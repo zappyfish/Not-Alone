@@ -57,7 +57,7 @@ public class Personal extends AppCompatActivity {
                     if (usrname != null) {
                         mDatabase = database.getReference(usrname); // get database from username
                         if (sendMessage.getText() != null) {
-
+                            if(niceThings == null) niceThings = new ArrayList<String>(); // if the user is new
                             niceThings.add(sendMessage.getText().toString()); // add to list
                             //niceThings.add("test");
                             mDatabase.setValue(niceThings); // save list
@@ -72,7 +72,7 @@ public class Personal extends AppCompatActivity {
         getName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usrname = sendUserName.getText().toString();
+                final String usrname = sendUserName.getText().toString();
                 niceThings = new ArrayList<String>();
                 canWrite = true;
                 if (usrname != null) {
@@ -81,6 +81,8 @@ public class Personal extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             niceThings = (ArrayList<String>)dataSnapshot.getValue();
+                            Toast t = Toast.makeText(Personal.this, usrname + "loaded", Toast.LENGTH_SHORT);
+                            t.show();
                         }
 
                         @Override

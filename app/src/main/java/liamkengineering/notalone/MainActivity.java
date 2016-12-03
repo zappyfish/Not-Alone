@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             updateMessages();
             //updatePhotos();
-            handler.postDelayed(tickUi, 5000);
+            handler.postDelayed(tickUi, 4000);
         }
     };
 
