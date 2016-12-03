@@ -33,11 +33,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/hotline"
         android:text="Call National Suicide Hotline" />
-=======
+
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/personal"
         android:text="Personal Messages" />
->>>>>>> 1d796f88807c5babea24c517b379a7ab14b91340
 </LinearLayout>
