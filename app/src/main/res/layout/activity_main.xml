@@ -33,10 +33,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/hotline"
         android:text="Call National Suicide Hotline" />
-<<<<<<< HEAD
 
-=======
->>>>>>> 0e1fd281c6d7edc8355de7ce473629b8e33d169f
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
