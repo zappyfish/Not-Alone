@@ -17,6 +17,16 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:hint="Type Username of User to Contact"
+        android:id="@+id/senduser"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/get"
+        android:text="Load up User"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:hint="Type a Message to Send!"
         android:id="@+id/send"/>
     <Button

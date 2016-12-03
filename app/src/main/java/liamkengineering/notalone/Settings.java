@@ -37,7 +37,6 @@ public class Settings extends AppCompatActivity {
     TextView textTargetUri;
     ImageView targetImage;
     public static final String PREFS_NAME = "NKDROID_APP";
-    SharedPreferences sharedPrefs;
     Context ctx;
 
     @Override
@@ -46,7 +45,7 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        sharedPrefs = getSharedPreferences("App_settings", Context.MODE_PRIVATE);
+        final SharedPreferences sharedPrefs = getSharedPreferences("App_settings", Context.MODE_PRIVATE);
         Button buttonLoadImage = (Button) findViewById(R.id.loadimage);
         Button nextButton = (Button) findViewById(R.id.next);
         Button saveButton = (Button) findViewById(R.id.save);
@@ -60,7 +59,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
-                setUsername();
+                setUsername(sharedPrefs);
             }
         });
         buttonLoadImage.setOnClickListener(new Button.OnClickListener() {
@@ -77,7 +76,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 //saveToInternalStorage();
-                savePhotos(ctx);
+                savePhotos(ctx, sharedPrefs);
             }});
         nextButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -101,7 +100,7 @@ public class Settings extends AppCompatActivity {
                 }
             }
         });
-        photoList = readFromInternalStorage(ctx); // get photos upon creation
+        photoList = readFromInternalStorage(ctx, sharedPrefs); // get photos upon creation
         if(photoList == null) {
             photoList = new ArrayList<>();
         }
@@ -131,7 +130,7 @@ public class Settings extends AppCompatActivity {
     /*
        this method is called by the save button, and it saves photo uris in sharedpreferences
      */
-    public void savePhotos(Context ctx) {
+    public void savePhotos(Context ctx, SharedPreferences sharedPrefs) {
         SharedPreferences.Editor editor = sharedPrefs.edit();
         Set<String> s = new HashSet<String>();
         for(int i =0; i<photoList.size();i++) {
@@ -146,7 +145,7 @@ public class Settings extends AppCompatActivity {
     /*
     this method uses sharepreferences to read from internal storage.
      */
-    public List<Uri> readFromInternalStorage(Context ctx) {
+    public List<Uri> readFromInternalStorage(Context ctx, SharedPreferences sharedPrefs) {
         List<Uri> l = new ArrayList<>();
         List<String> temp = new ArrayList<>();
         Set<String> s = sharedPrefs.getStringSet("PHOTOS", null);
@@ -165,12 +164,12 @@ public class Settings extends AppCompatActivity {
     /*
     This gets texts in userText to save a username in sharedpreferences
      */
-    public void setUsername() {
+    public void setUsername(SharedPreferences sharedPrefs) {
         SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.putString("USERNAME", userText.getText().toString());
         editor.apply();
     }
-    public String getUsername() {
+    public String getUsername(SharedPreferences sharedPrefs) {
         return sharedPrefs.getString("USERNAME", null);
     }
 
