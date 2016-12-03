@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,7 +17,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.FileNotFoundException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -97,6 +102,25 @@ public class Settings extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void savePhotos() {
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        Gson gson = new Gson();
+
+        String json = gson.toJson(photoList);
+
+        editor.putString(PHOTOS, json);
+        editor.commit();
+    }
+
+    public ArrayList<Uri> readFromInternalStorage() {
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        Gson gson = new Gson();
+        String json = sharedPrefs.getString(PHOTOS, null);
+        Type type = new TypeToken<ArrayList<Uri>>() {}.getType();
+        return gson.fromJson(json, type);
     }
 
 }

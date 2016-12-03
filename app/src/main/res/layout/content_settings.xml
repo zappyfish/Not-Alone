@@ -17,5 +17,27 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="settings"/>
+    <Button
+        android:id="@+id/loadimage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Image" />
+    <Button
+        android:id="@+id/next"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        />
+    <TextView
+        android:id="@+id/targeturi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+    <ImageView
+        android:id="@+id/targetimage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
 
 </LinearLayout>
