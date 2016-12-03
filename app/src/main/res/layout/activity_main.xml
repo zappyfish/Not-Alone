@@ -23,4 +23,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/textMessage"
         android:text="Send Text" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hotline"
+        android:text="Call National Suicide Hotline" />
 </LinearLayout>

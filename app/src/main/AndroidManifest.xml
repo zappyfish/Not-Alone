@@ -27,6 +27,13 @@
             android:name=".TextMessage"
             android:label="Send Text"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Call National Suicide Hotline"
+            android:onClick="Call National Suicide Hotline" />
+
     </application>
 
 </manifest>
