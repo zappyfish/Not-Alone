@@ -11,7 +11,11 @@
     android:orientation="vertical"
     tools:context="liamkengineering.notalone.MainActivity">
 
-
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/test"
+        android:text="empty"/>
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -23,10 +27,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/textMessage"
         android:text="Send Text" />
+<<<<<<< HEAD
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/hotline"
         android:text="Call National Suicide Hotline" />
+=======
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/personal"
+        android:text="Personal Messages" />
+>>>>>>> 1d796f88807c5babea24c517b379a7ab14b91340
 </LinearLayout>
