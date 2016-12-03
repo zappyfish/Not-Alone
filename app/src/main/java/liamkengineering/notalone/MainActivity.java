@@ -34,11 +34,21 @@ public class MainActivity extends AppCompatActivity {
     Button textMessageButton;
     Button hotlineButton;
     String hotline = "8002738255";
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb03bb7cc0b351ab215fc34fd06060e2ed4a3b67
     Button personalButton;
     TextView mTest;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference mDatabase;
     String test;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cb03bb7cc0b351ab215fc34fd06060e2ed4a3b67
     int curMessage = 0;
     // for updating UI
     private final Handler handler = new Handler();
@@ -50,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
             handler.postDelayed(tickUi, 5000);
         }
     };
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1d796f88807c5babea24c517b379a7ab14b91340
+>>>>>>> 29b7e2eec4ee1dc7ea4c64dc8ab54e074774c1e8
+>>>>>>> 040980303c543d5ff11a94596ceb4f36e78d14dd
+>>>>>>> cb03bb7cc0b351ab215fc34fd06060e2ed4a3b67
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb03bb7cc0b351ab215fc34fd06060e2ed4a3b67
         personalButton = (Button) findViewById(R.id.personal);
         personalButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -116,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
 
     public void updateMessages() {
         if(niceThings != null) {
@@ -127,6 +149,22 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
                 mTest.setText("no messages");
+=======
+    public void updateMessage() {
+        mTest.setText(test);
+<<<<<<< HEAD
+=======
+>>>>>>> 1d796f88807c5babea24c517b379a7ab14b91340
+>>>>>>> 29b7e2eec4ee1dc7ea4c64dc8ab54e074774c1e8
+>>>>>>> 040980303c543d5ff11a94596ceb4f36e78d14dd
+    }
+        public void updateMessages() {
+            if(niceThings != null) {
+                if(niceThings.size() > 0) {
+                    mTest.setText(niceThings.get(curMessage));
+                    curMessage = (curMessage+1)%niceThings.size();
+                }
+>>>>>>> cb03bb7cc0b351ab215fc34fd06060e2ed4a3b67
             }
         }
     }
