@@ -42,13 +42,12 @@ public class TextMessage extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String message = "Hi, I'm feeling a little down. Do you have time to talk?";
                 for (long curr : sendTo) {
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + curr));
-                    intent.putExtra("sms_body", "Hello");
+                    intent.putExtra("sms_body", message);
                     startActivity(intent);
                 }
-                //sendSMSMessage(9739539755, "Hello");
 
             }
         });
@@ -60,7 +59,7 @@ public class TextMessage extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.checkbox_c1:
                 if (checked) {
-                    sendTo.add(8602151217L);
+                    sendTo.add(9739539755L);
                 }
 
         }

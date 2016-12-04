@@ -11,11 +11,7 @@
     android:orientation="vertical"
     tools:context="liamkengineering.notalone.MainActivity">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/test"
-        android:text="empty"/>
+
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -39,6 +35,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/personal"
         android:text="Personal Messages" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/test"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:text="empty"/>
+
     <ImageView
         android:id="@+id/targetimage"
         android:layout_width="fill_parent"
