@@ -158,4 +158,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences sharedPrefs = getSharedPreferences("App_settings", Context.MODE_PRIVATE);
+        photoList = settings.readFromInternalStorage(this.getApplicationContext(), sharedPrefs); // load up images
+    }
 }
